@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./main.css" />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      .section {
+        background-color: hsl(240, 73%, 65%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .bg-pattern {
+        background-image: url(./images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 600px 550px;
+        background-attachment: fixed;
+      }
+
+      .body-font {
+        font-size: 12px;
+      }
+      .container {
+        width: 700px;
+      }
+
+      @media screen and (max-width: 375px) {
+        body {
+          background-color: hsl(240, 73%, 65%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .container {
+          width: 350px;
+          min-height: 500px;
+        }
+
+        .bg-pattern-mb {
+          position: absolute;
+          width: 70%;
+          left: 50px;
+        }
+        .img-2m {
+          position: relative;
+          top: 83px;
+          width: 70%;
+          left: 50px;
+        }
+      }
+
+      .img-1 {
+        position: absolute;
+        top: 260px;
+        right: 920px;
+        z-index: 5;
+        width: 170px;
+      }
+
+      .img-2 {
+        position: absolute;
+        top: 175px;
+        left: 270px;
+        width: 350px;
+      }
+
+      h2:focus {
+        font-weight: bolder;
+      }
+
+      .accordion {
+        width: 100%;
+        text-align: left;
+      }
+      .panel {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+      }
+
+      .active,
+      .accordion:hover {
+        color: hsl(14, 88%, 65%);
+      }
+
+      .accordion:after {
+        content: url(./images/icon-arrow-down.svg);
+        float: right;
+      }
+
+      .active:after {
+        content: url(./images/icon-arrow-down.svg);
+        transform: rotate(180deg);
+      }
+
+      .active {
+        color: black;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Desktop Design -->
+    <section class="hidden md:block">
+      <div class="section">
+        <div class="container grid grid-cols-2 bg-white rounded-lg">
+          <div class="bg-pattern bg-sizing">
+            <img
+              class="img-1"
+              src="./images/illustration-box-desktop.svg"
+              alt=""
+            />
+            <img
+              class="img-2"
+              src="./images/illustration-woman-online-desktop.svg"
+              alt=""
+            />
+          </div>
+          <div>
+            <div class="body-font flex flex-col p-6">
+              <h1 class="text-4xl py-4">FAQ</h1>
+              <div class="divide-y-2 divide-solid space-y-6">
+                <div>
+                  <button class="accordion">
+                    How many team members can I invite?
+                  </button>
+                  <div class="panel">
+                    <p>
+                      You can invite up to 2 additional users on the Free plan.
+                      There is no limit on team members for the Premium plan.
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <button class="accordion">
+                    What is the maximum file upload size?
+                  </button>
+                  <div class="panel">
+                    <p>
+                      No more than 2GB. All files in your account must fit your
+                      allotted storage space.
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <button class="accordion">How do I reset my password?</button>
+
+                  <div class="panel">
+                    <p>
+                      Click “Forgot password” from the login page or “Change
+                      password” from your profile page. A reset link will be
+                      emailed to you.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <button class="accordion">
+                    Can I cancel my subscription?
+                  </button>
+                  <div class="panel">
+                    <p>
+                      Yes! Send us a message and we’ll process your request no
+                      questions asked.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <button class="accordion">
+                    Do you provide additional support?
+                  </button>
+                  <div class="panel">
+                    <p>
+                      Chat and email support is available 24/7. Phone lines are
+                      open during normal business hours.
+                    </p>
+                  </div>
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Design -->
+    <section class="md:hidden lg:hidden">
+      <div>
+        <img
+          class="img-2m"
+          src="./images/illustration-woman-online-mobile.svg"
+          alt="illustration-woman-online-mobile"
+        />
+        <img
+          class="bg-pattern-mb"
+          src="./images/bg-pattern-mobile.svg"
+          alt=""
+        />
+      </div>
+      <div class="container bg-white rounded-3xl pt-20 px-6">
+        <div class="body-font">
+          <h1 class="text-5xl font-bold py-14 text-center">FAQ</h1>
+          <div class="divide-y-2 divide-solid space-y-6">
+            <div>
+              <button class="accordion">
+                How many team members can I invite?
+              </button>
+              <div class="panel">
+                <p>
+                  You can invite up to 2 additional users on the Free plan.
+                  There is no limit on team members for the Premium plan.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button class="accordion">
+                What is the maximum file upload size?
+              </button>
+              <div class="panel">
+                <p>
+                  No more than 2GB. All files in your account must fit your
+                  allotted storage space.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button class="accordion">How do I reset my password?</button>
+              <div class="panel">
+                <p>
+                  Click “Forgot password” from the login page or “Change
+                  password” from your profile page. A reset link will be emailed
+                  to you.
+                </p>
+              </div>
+            </div>
+            <div>
+              <button class="accordion">Can I cancel my subscription?</button>
+              <div class="panel">
+                <p>
+                  Yes! Send us a message and we’ll process your request no
+                  questions asked.
+                </p>
+              </div>
+            </div>
+            <div>
+              <button class="accordion">
+                Do you provide additional support?
+              </button>
+              <div class="panel">
+                <p>
+                  Chat and email support is available 24/7. Phone lines are open
+                  during normal business hours.
+                </p>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
